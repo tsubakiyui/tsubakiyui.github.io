@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585202427360">
+<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585203109690">
 <link rel="stylesheet" href="https://tsubakiyui.github.io/styles/main.css">
 
 
@@ -21,9 +21,9 @@
     <meta name="description" content="youtube-streaming-translator-python
 首先下载termux
 还是用魔改的uTermux吧，原版太麻烦了
-简单配置一下termux
-#先更新一下
-apt update &amp;&amp; apt upgra..." />
+左划换清华源，一直y就对了，大概
+pkg install python
+pip install --u..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -33,7 +33,7 @@ apt update &amp;&amp; apt upgra..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://tsubakiyui.github.io">
-        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585202427360" class="site-logo">
+        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585203109690" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -102,26 +102,13 @@ apt update &amp;&amp; apt upgra..." />
               </div>
             
             <div class="post-content" v-pre>
-              <p><a href="https://github.com/azuse/youtube-streaming-translator-python">youtube-streaming-translator-python</a></p>
-<p><s>首先下载<a href="https://f-droid.org/zh_Hans/packages/com.termux/">termux</a></s><br>
+              <p><a href="https://github.com/azuse/youtube-streaming-translator-python">youtube-streaming-translator-python</a><br>
+<s>首先下载<a href="https://f-droid.org/zh_Hans/packages/com.termux/">termux</a></s><br>
 还是用魔改的<a href="https://github.com/hanxinhao000/Termux-app-UpgradedVersion/releases">uTermux</a>吧，原版太麻烦了<br>
-简单配置一下<a href="https://www.sqlsec.com/2018/05/termux.html">termux</a></p>
-<pre><code>#先更新一下
-apt update &amp;&amp; apt upgrade
-y
-pkg update &amp;&amp; apt upgrade
-y
-
-#安装git
-apt install git
-
-
-
-
-```git
+左划换清华源，一直y就对了，大概</p>
+<pre><code>pkg install python
+pip install --upgrade pip
 git clone https://github.com/azuse/youtube-streaming-translator-python
-
-
 
 </code></pre>
 
