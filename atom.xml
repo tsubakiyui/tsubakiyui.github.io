@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tsubakiyui.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-26T12:46:59.098Z</updated>
+    <updated>2020-03-26T13:24:41.018Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tsubakiyui.github.io"/>
     <link rel="self" href="https://tsubakiyui.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://tsubakiyui.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[在手机上通过termux实现vtb机翻]]></title>
+        <title type="html"><![CDATA[在手机上通过termux实现vtb机翻（未完成）]]></title>
         <id>https://tsubakiyui.github.io/post/autotranslate/</id>
         <link href="https://tsubakiyui.github.io/post/autotranslate/">
         </link>
@@ -60,6 +60,40 @@ pip install pyaudio
 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/llvmlite/">https://pypi.tuna.tsinghua.edu.cn/simple/llvmlite/</a></p>
 <pre><code>pip install llvmlite-0.31.0-cp38-none-linux_aarch64.whl
 </code></pre>
+<p>环境方面我到这里已经没有再报错了<br>
+安装SOX</p>
+<pre><code>pip install SOX
+</code></pre>
+<p>添加谷歌api key到Path中</p>
+<pre><code>export GOOGLE_APPLICATION_CREDENTIALS=&quot;[PATH]&quot;
+#例:export GOOGLE_APPLICATION_CREDENTIALS=&quot;/home/user/Downloads/service-account-file.json&quot;
+</code></pre>
+<p>如果是用百度翻译API的话，<br>
+修改main.google.py中约245行中把baidu设置为baidu=True<br>
+默认似乎是true的，用谷歌翻译API的话应该改为false吧</p>
+<pre><code>vi main.google.py
+#滑到245行，按i输入，完成后先Esc在ZZ(自己输入法那里的Z按两遍)
+</code></pre>
+<p>运行脚本</p>
+<pre><code>python main.google.py
+</code></pre>
+<p>报错了</p>
+<pre><code>pkg install opencv
+</code></pre>
+<pre><code>python main.google.py
+</code></pre>
+<pre><code>Traceback (most recent call last): 
+File &quot;main.google.py&quot;, line 23, in &lt;module&gt;               from google.cloud import speech_v1p1beta1 as speech   
+File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/cloud/speech_v1p1beta1/__init__.py&quot;, line 19, in &lt;module&gt;                                        from google.cloud.speech_v1p1beta1.gapic import speech_client                                                 
+File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/cloud/speech_v1p1beta1/gapic/speech_client.py&quot;, line 24, in &lt;module&gt;                             import google.api_core.gapic_v1.client_info           
+File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/api_core/gapic_v1/__init__.py&quot;, line 16, in &lt;module&gt;                                             from google.api_core.gapic_v1 import config          
+ File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/api_core/gapic_v1/config.py&quot;, line 23, in &lt;module&gt;                                               import grpc                                           
+ File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/grpc/__init__.py&quot;, line 23, in &lt;module&gt;         from grpc._cython import cygrpc as _cygrpc          
+ ImportError: cannot import name 'cygrpc' from 'grpc._cython' (/data/data/com.termux/files/usr/lib/python3.8/site-packages/grpc/_cython/__init__.py)
+</code></pre>
+<p>我没辙了，先这样吧，有空在搞<br>
+2020年3月26日21:22:34<br>
+开始这些捣鼓为3月2日，完</p>
 ]]></content>
     </entry>
 </feed>

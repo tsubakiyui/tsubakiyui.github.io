@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" >
 
-<title>在手机上通过termux实现vtb机翻 | Gridea</title>
+<title>在手机上通过termux实现vtb机翻（未完成） | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585226794271">
+<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585229074394">
 <link rel="stylesheet" href="https://tsubakiyui.github.io/styles/main.css">
 
 
@@ -39,7 +39,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://tsubakiyui.github.io">
-        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585226794271" class="site-logo">
+        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585229074394" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -101,7 +101,7 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">在手机上通过termux实现vtb机翻</h2>
+            <h2 class="post-title">在手机上通过termux实现vtb机翻（未完成）</h2>
             <div class="post-date">2020-03-26</div>
             
               <div class="feature-container" style="background-image: url('https://tsubakiyui.github.io/post-images/autotranslate.png')">
@@ -152,6 +152,40 @@ pip install pyaudio
 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/llvmlite/">https://pypi.tuna.tsinghua.edu.cn/simple/llvmlite/</a></p>
 <pre><code>pip install llvmlite-0.31.0-cp38-none-linux_aarch64.whl
 </code></pre>
+<p>环境方面我到这里已经没有再报错了<br>
+安装SOX</p>
+<pre><code>pip install SOX
+</code></pre>
+<p>添加谷歌api key到Path中</p>
+<pre><code>export GOOGLE_APPLICATION_CREDENTIALS=&quot;[PATH]&quot;
+#例:export GOOGLE_APPLICATION_CREDENTIALS=&quot;/home/user/Downloads/service-account-file.json&quot;
+</code></pre>
+<p>如果是用百度翻译API的话，<br>
+修改main.google.py中约245行中把baidu设置为baidu=True<br>
+默认似乎是true的，用谷歌翻译API的话应该改为false吧</p>
+<pre><code>vi main.google.py
+#滑到245行，按i输入，完成后先Esc在ZZ(自己输入法那里的Z按两遍)
+</code></pre>
+<p>运行脚本</p>
+<pre><code>python main.google.py
+</code></pre>
+<p>报错了</p>
+<pre><code>pkg install opencv
+</code></pre>
+<pre><code>python main.google.py
+</code></pre>
+<pre><code>Traceback (most recent call last): 
+File &quot;main.google.py&quot;, line 23, in &lt;module&gt;               from google.cloud import speech_v1p1beta1 as speech   
+File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/cloud/speech_v1p1beta1/__init__.py&quot;, line 19, in &lt;module&gt;                                        from google.cloud.speech_v1p1beta1.gapic import speech_client                                                 
+File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/cloud/speech_v1p1beta1/gapic/speech_client.py&quot;, line 24, in &lt;module&gt;                             import google.api_core.gapic_v1.client_info           
+File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/api_core/gapic_v1/__init__.py&quot;, line 16, in &lt;module&gt;                                             from google.api_core.gapic_v1 import config          
+ File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/google/api_core/gapic_v1/config.py&quot;, line 23, in &lt;module&gt;                                               import grpc                                           
+ File &quot;/data/data/com.termux/files/usr/lib/python3.8/site-packages/grpc/__init__.py&quot;, line 23, in &lt;module&gt;         from grpc._cython import cygrpc as _cygrpc          
+ ImportError: cannot import name 'cygrpc' from 'grpc._cython' (/data/data/com.termux/files/usr/lib/python3.8/site-packages/grpc/_cython/__init__.py)
+</code></pre>
+<p>我没辙了，先这样吧，有空在搞<br>
+2020年3月26日21:22:34<br>
+开始这些捣鼓为3月2日，完</p>
 
             </div>
             
