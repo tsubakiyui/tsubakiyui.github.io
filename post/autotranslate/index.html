@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585221574491">
+<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585224143906">
 <link rel="stylesheet" href="https://tsubakiyui.github.io/styles/main.css">
 
 
@@ -39,7 +39,7 @@ pip install --u..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://tsubakiyui.github.io">
-        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585221574491" class="site-logo">
+        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585224143906" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -115,7 +115,12 @@ pip install --u..." />
 <pre><code>pkg install python
 pip install --upgrade pip
 git clone https://github.com/azuse/youtube-streaming-translator-python
-
+cd https://github.com/azuse/youtube-streaming-translator-python
+pip install -r requiremments.txt
+#这里安装opencv-python报错了，我选择了安装离线包
+#自己[下吧](https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/)
+pip install opencv_python-4.2.0.32-cp38-none-linux_aarch64.whl
+pip install -r requiremments.txt
 </code></pre>
 
             </div>
