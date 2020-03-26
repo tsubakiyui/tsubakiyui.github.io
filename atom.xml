@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tsubakiyui.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-26T12:02:28.049Z</updated>
+    <updated>2020-03-26T12:12:39.728Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tsubakiyui.github.io"/>
     <link rel="self" href="https://tsubakiyui.github.io/atom.xml"/>
@@ -25,10 +25,19 @@ pip install --upgrade pip
 git clone https://github.com/azuse/youtube-streaming-translator-python
 cd https://github.com/azuse/youtube-streaming-translator-python
 pip install -r requiremments.txt
-#这里安装opencv-python报错了，我选择了安装离线包
-#自己[下吧](https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/)
-pip install opencv_python-4.2.0.32-cp38-none-linux_aarch64.whl
+</code></pre>
+<p>这里安装opencv-python报错了，我选择了安装离线包<br>
+自己下吧<a href="https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/">https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/</a></p>
+<pre><code>pip install opencv_python-4.2.0.32-cp38-none-linux_aarch64.whl
 pip install -r requiremments.txt
+</code></pre>
+<p>安装scipy又报错了</p>
+<pre><code>pkg install wget
+$PREFIX/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh 
+bash setup-pointless-repo.sh
+apt install scipy
+</code></pre>
+<pre><code>pip install -r requiremments.txt
 </code></pre>
 ]]></content>
     </entry>
