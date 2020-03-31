@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tsubakiyui.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-26T13:24:41.018Z</updated>
+    <updated>2020-03-31T10:54:10.581Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tsubakiyui.github.io"/>
     <link rel="self" href="https://tsubakiyui.github.io/atom.xml"/>
@@ -10,6 +10,84 @@
     <logo>https://tsubakiyui.github.io/images/avatar.png</logo>
     <icon>https://tsubakiyui.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[termux-packages编译python3.6]]></title>
+        <id>https://tsubakiyui.github.io/post/termux-packages-bian-yi-python36/</id>
+        <link href="https://tsubakiyui.github.io/post/termux-packages-bian-yi-python36/">
+        </link>
+        <updated>2020-03-31T10:48:32.000Z</updated>
+        <content type="html"><![CDATA[<p>本段接上篇,可能有点问题请自行处理</p>
+<pre><code>cd /root/lib/
+wget -c https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
+mv android-ndk android-ndk-8
+mv android-ndk-r17c-linux-x86_64.zip android-ndk.zip
+unzip android-ndk.zip
+
+</code></pre>
+<p>卸载python3.7</p>
+<pre><code>apt remove python3
+</code></pre>
+<p>安装python3.6</p>
+<pre><code>sudo apt install openssl* zlib*
+sudo wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
+sudo tar -xzvf Python-3.6.8.tgz
+cd Python-3.6.8
+sudo ./configure --prefix=/usr/local/python --with-ssl --enable-optimizations
+#安装到/usr/local/python目录
+#不用事先创建python目录
+sudo make &amp;&amp; sudo make install
+#编译&amp;&amp;安装
+sudo ln -s /usr/local/python/bin/python3.6 /usr/bin/python3
+sudo ln -s /usr/local/python/bin/pip3.6 /usr/bin/pip3
+#创建python与pip软连接
+</code></pre>
+<pre><code>mv termux-packages termux-packages-a
+git clone https://github.com/termux/termux-packages.git
+mv termux-packages termux-packages-b
+mv termux-packages-a termux-packages
+cp -a termux-packages termux-packages-bak
+cd termux-packages
+git reset --hard 3f342b02e27bafa391fb5cd0ef356bce13f3f8bd
+cd 
+git checkout termux-packages
+sudo apt-get install libncurses5
+./termux-packages/build-package.sh python
+vi termux-packages/packages/ca-certificates/build.sh
+adf770dfd574a0d6026bfaa270cb6879b063957177a991d453ff1d302c02081f
+./termux-packages/build-package.sh python
+</code></pre>
+<pre><code>cp termux-packages-b/packages/libbz2/build.sh termux-packages/packages/libbz2/
+</code></pre>
+<p>ubuntu18安装最新nodejs<br>
+https://blog.csdn.net/weixin_34221036/article/details/91421667</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[运用termux-packages编译termux用包]]></title>
+        <id>https://tsubakiyui.github.io/post/yun-yong-termux-packages-bian-yi-termux-yong-bao/</id>
+        <link href="https://tsubakiyui.github.io/post/yun-yong-termux-packages-bian-yi-termux-yong-bao/">
+        </link>
+        <updated>2020-03-31T10:46:43.000Z</updated>
+        <content type="html"><![CDATA[<p>GCP ubuntu19</p>
+<pre><code>apt-get update
+apt-get upgrade
+apt-get install nodejs -y
+apt-get install npm -y
+sudo npm install -g node-gyp
+git clone https://github.com/termux/termux-packages.git
+vi termux-packages/scripts/setup-ubuntu.sh
+
+$SUDO DEBIAN_FRONTEND=noninteractive \
+	apt-get install -yq --no-install-recommends $PACKAGES
+改为
+$SUDO apt-get install -yq --no-install-recommends $PACKAGES
+./termux-packages/scripts/setup-android-sdk.sh
+touch /root/.android/repositories.cfg
+./termux-packages/scripts/setup-android-sdk.sh
+./termux-packages/build-package.sh python
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[在手机上通过termux实现vtb机翻（未完成）]]></title>
         <id>https://tsubakiyui.github.io/post/autotranslate/</id>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | Gridea</title>
+<title>termux-packages编译python3.6 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,14 +24,10 @@
 
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
+    <meta name="description" content="本段接上篇,可能有点问题请自行处理
+cd /root/lib/
+wget -c https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
+mv an..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -103,20 +99,66 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">termux-packages编译python3.6</h2>
+            <div class="post-date">2020-03-31</div>
             
             <div class="post-content" v-pre>
-              <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+              <p>本段接上篇,可能有点问题请自行处理</p>
+<pre><code>cd /root/lib/
+wget -c https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
+mv android-ndk android-ndk-8
+mv android-ndk-r17c-linux-x86_64.zip android-ndk.zip
+unzip android-ndk.zip
+
+</code></pre>
+<p>卸载python3.7</p>
+<pre><code>apt remove python3
+</code></pre>
+<p>安装python3.6</p>
+<pre><code>sudo apt install openssl* zlib*
+sudo wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
+sudo tar -xzvf Python-3.6.8.tgz
+cd Python-3.6.8
+sudo ./configure --prefix=/usr/local/python --with-ssl --enable-optimizations
+#安装到/usr/local/python目录
+#不用事先创建python目录
+sudo make &amp;&amp; sudo make install
+#编译&amp;&amp;安装
+sudo ln -s /usr/local/python/bin/python3.6 /usr/bin/python3
+sudo ln -s /usr/local/python/bin/pip3.6 /usr/bin/pip3
+#创建python与pip软连接
+</code></pre>
+<pre><code>mv termux-packages termux-packages-a
+git clone https://github.com/termux/termux-packages.git
+mv termux-packages termux-packages-b
+mv termux-packages-a termux-packages
+cp -a termux-packages termux-packages-bak
+cd termux-packages
+git reset --hard 3f342b02e27bafa391fb5cd0ef356bce13f3f8bd
+cd 
+git checkout termux-packages
+sudo apt-get install libncurses5
+./termux-packages/build-package.sh python
+vi termux-packages/packages/ca-certificates/build.sh
+adf770dfd574a0d6026bfaa270cb6879b063957177a991d453ff1d302c02081f
+./termux-packages/build-package.sh python
+</code></pre>
+<pre><code>cp termux-packages-b/packages/libbz2/build.sh termux-packages/packages/libbz2/
+</code></pre>
+<p>ubuntu18安装最新nodejs<br>
+https://blog.csdn.net/weixin_34221036/article/details/91421667</p>
 
             </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://tsubakiyui.github.io/post/yun-yong-termux-packages-bian-yi-termux-yong-bao/">
+                  <h3 class="post-title">
+                    运用termux-packages编译termux用包
+                  </h3>
+                </a>
+              </div>
             
 
             
