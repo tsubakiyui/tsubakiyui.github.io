@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585829139478">
+<link rel="shortcut icon" href="https://tsubakiyui.github.io/favicon.ico?v=1585829892739">
 <link rel="stylesheet" href="https://tsubakiyui.github.io/styles/main.css">
 
 
@@ -37,7 +37,7 @@ mv an..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://tsubakiyui.github.io">
-        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585829139478" class="site-logo">
+        <img src="https://tsubakiyui.github.io/images/avatar.png?v=1585829892739" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -125,6 +125,9 @@ sudo ln -s /usr/local/python/bin/python3.6 /usr/bin/python3
 sudo ln -s /usr/local/python/bin/pip3.6 /usr/bin/pip3
 #创建python与pip软连接
 </code></pre>
+<p>自此以后请尽量一次完成，之后的SSH通过浏览器可能连接不上了，用手机倒是可以<br>
+请提前设置好root登录，<br>
+也可能只是我的问题</p>
 <pre><code>mv termux-packages termux-packages-a
 git clone https://github.com/termux/termux-packages.git
 mv termux-packages termux-packages-b
@@ -142,6 +145,8 @@ adf770dfd574a0d6026bfaa270cb6879b063957177a991d453ff1d302c02081f
 </code></pre>
 <pre><code>cp termux-packages-b/packages/libbz2/build.sh termux-packages/packages/libbz2/
 </code></pre>
+<p>然而还是用不了，termux安装不上python3.6</p>
+<h1 id="终结">终结</h1>
 <p>ubuntu18安装最新nodejs<br>
 https://blog.csdn.net/weixin_34221036/article/details/91421667</p>
 
