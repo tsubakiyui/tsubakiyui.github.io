@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tsubakiyui.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-31T12:23:38.033Z</updated>
+    <updated>2020-04-02T12:05:49.440Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tsubakiyui.github.io"/>
     <link rel="self" href="https://tsubakiyui.github.io/atom.xml"/>
@@ -10,6 +10,59 @@
     <logo>https://tsubakiyui.github.io/images/avatar.png</logo>
     <icon>https://tsubakiyui.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[谷歌云仅启动盘扩容]]></title>
+        <id>https://tsubakiyui.github.io/post/gu-ge-yun-jin-qi-dong-pan-kuo-rong/</id>
+        <link href="https://tsubakiyui.github.io/post/gu-ge-yun-jin-qi-dong-pan-kuo-rong/">
+        </link>
+        <updated>2020-04-02T11:47:56.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="首先在computer-engine硬盘扩大启动盘容量">首先在Computer Engine》硬盘扩大启动盘容量</h2>
+<p>连接到实例</p>
+<pre><code>sudo lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0   50G  0 disk 
+└─sda1   8:1    0   20G  0 part /
+</code></pre>
+<p>安装 growpart</p>
+<pre><code>Debian
+sudo apt -y install cloud-guest-utils
+CentOS 
+sudo yum -y install cloud-utils-growpart
+</code></pre>
+<p>扩展分区</p>
+<pre><code>sudo growpart /dev/sda1
+CHANGED: partition=1 start=2048 old: size=41939040 end=41941088 new: size=104855519,end=104857567
+
+</code></pre>
+<p>系统格式为ext4则</p>
+<pre><code>sudo resize2fs /dev/sda1
+</code></pre>
+<p>系统格式为xfs则</p>
+<pre><code>sudo xfs_growfs /
+#这里的  /  是上面
+sda      8:0    0   50G  0 disk 
+└─sda1   8:1    0   20G  0 part /
+中的  /
+请自行替换
+meta-data=/dev/sda1              isize=512    agcount=8, agsize=655296 blks
+                 =                       sectsz=4096  attr=2, projid32bit=1
+                 =                       crc=1        finobt=1, sparse=1, rmapbt=0
+                 =                       reflink=1
+data          =                       bsize=4096   blocks=5242368, imaxpct=25
+                 =                       sunit=0      swidth=0 blks
+naming     =version 2              bsize=4096   ascii-ci=0, ftype=1
+log            =internal log           bsize=4096   blocks=2560, version=2
+                  =                       sectsz=4096  sunit=1 blks, lazy-count=1
+realtime     =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 5242368 to 13106939
+</code></pre>
+<pre><code>sudo df -h /dev/sda1
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        50G   10G   40G  20% /
+</code></pre>
+<h1 id="完">完</h1>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[不要随便把ubuntu自带python给卸载了]]></title>
         <id>https://tsubakiyui.github.io/post/bu-yao-sui-bian-ba-ubuntu-zi-dai-python-gei-xie-zai-liao/</id>
