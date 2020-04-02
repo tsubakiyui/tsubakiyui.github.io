@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>继上文安装额外硬盘 | Gridea</title>
+<title>centos安装pyaudio | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,11 +24,9 @@
 
 
 
-    <meta name="description" content="自行设置好额外硬盘
-sudo lsblk
-NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda      8:0    0   50G  0 disk 
-└─sda1   8:1    0   50G..." />
+    <meta name="description" content="sudo yum -y install portaudio portaudio-devel
+
+" />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -100,40 +98,21 @@ sda      8:0    0   50G  0 disk
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">继上文安装额外硬盘</h2>
+            <h2 class="post-title">centos安装pyaudio</h2>
             <div class="post-date">2020-04-02</div>
             
             <div class="post-content" v-pre>
-              <h2 id="自行设置好额外硬盘">自行设置好额外硬盘</h2>
-<pre><code>sudo lsblk
-NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda      8:0    0   50G  0 disk 
-└─sda1   8:1    0   50G  0 part /
-sdb      8:16   0  500G  0 disk 
+              <pre><code>sudo yum -y install portaudio portaudio-devel
 </code></pre>
-<pre><code>sudo mkfs.ext4 -m 0 -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
-</code></pre>
-<p>我这里把它挂载到/mnt/disks/sdb，如需更换请自行替换下面的  /mnt/disks/sdb</p>
-<pre><code>sudo mkdir -p /mnt/disks/sdb
-</code></pre>
-<p>配置读写权限</p>
-<pre><code>sudo chmod a+w /mnt/disks/sdb
-</code></pre>
-<pre><code>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda      8:0    0   50G  0 disk 
-└─sda1   8:1    0   50G  0 part /
-sdb      8:16   0  500G  0 disk /mnt/disks/sdb
-</code></pre>
-<h1 id="完">完</h1>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://tsubakiyui.github.io/post/gu-ge-yun-jin-qi-dong-pan-kuo-rong/">
+                <a href="https://tsubakiyui.github.io/post/vtb-ji-fan-202042/">
                   <h3 class="post-title">
-                    谷歌云仅启动盘扩容
+                    vtb机翻 2020.4.2
                   </h3>
                 </a>
               </div>
