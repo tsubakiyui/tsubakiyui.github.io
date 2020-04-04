@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tsubakiyui.github.io</id>
     <title>Gridea</title>
-    <updated>2020-04-04T08:21:07.836Z</updated>
+    <updated>2020-04-04T08:22:09.137Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tsubakiyui.github.io"/>
     <link rel="self" href="https://tsubakiyui.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://tsubakiyui.github.io/images/avatar.png</logo>
     <icon>https://tsubakiyui.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Fiddler抓包下载钉钉直播回放]]></title>
+        <id>https://tsubakiyui.github.io/post/fiddler-zhua-bao-xia-zai-ding-ding-zhi-bo-hui-fang/</id>
+        <link href="https://tsubakiyui.github.io/post/fiddler-zhua-bao-xia-zai-ding-ding-zhi-bo-hui-fang/">
+        </link>
+        <updated>2020-04-04T08:13:09.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>stop
+cls
+</code></pre>
+<p>然后在直播回放打开前输入</p>
+<pre><code>start
+</code></pre>
+<p>回放加载完成后瞎拖一下进度条就可以输入</p>
+<pre><code>stop
+@alicdn.com 
+select vnd.apple.mpegurl
+</code></pre>
+<p>右键copy&gt;&gt;&gt;Just url<br>
+用N_m3u8DL-CLI下载</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[碎碎念]]></title>
         <id>https://tsubakiyui.github.io/post/sui-sui-nian/</id>
