@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>谷歌云仅启动盘扩容 | Gridea</title>
+<title>Fiddler抓包下载钉钉直播回放 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,11 +24,18 @@
 
 
 
-    <meta name="description" content="首先在Computer Engine》硬盘扩大启动盘容量
-连接到实例
-sudo lsblk
-NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda      8:0    0   50G  0 disk..." />
+    <meta name="description" content="stop
+cls
+
+然后在直播回放打开前输入
+start
+
+回放加载完成后瞎拖一下进度条就可以输入
+stop
+@alicdn.com 
+select vnd.apple.mpegurl
+
+右键copy&gt;&gt;&gt;Just url..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -100,67 +107,26 @@ sda      8:0    0   50G  0 disk..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">谷歌云仅启动盘扩容</h2>
-            <div class="post-date">2020-04-02</div>
+            <h2 class="post-title">Fiddler抓包下载钉钉直播回放</h2>
+            <div class="post-date">2020-04-04</div>
             
             <div class="post-content" v-pre>
-              <h2 id="首先在computer-engine硬盘扩大启动盘容量">首先在Computer Engine》硬盘扩大启动盘容量</h2>
-<p>连接到实例</p>
-<pre><code>sudo lsblk
-NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda      8:0    0   50G  0 disk 
-└─sda1   8:1    0   20G  0 part /
+              <pre><code>stop
+cls
 </code></pre>
-<p>安装 growpart</p>
-<pre><code>Debian
-sudo apt -y install cloud-guest-utils
-CentOS 
-sudo yum -y install cloud-utils-growpart
+<p>然后在直播回放打开前输入</p>
+<pre><code>start
 </code></pre>
-<p>扩展分区</p>
-<pre><code>sudo growpart /dev/sda1
-CHANGED: partition=1 start=2048 old: size=41939040 end=41941088 new: size=104855519,end=104857567
-
+<p>回放加载完成后瞎拖一下进度条就可以输入</p>
+<pre><code>stop
+@alicdn.com 
+select vnd.apple.mpegurl
 </code></pre>
-<p>系统格式为ext4则</p>
-<pre><code>sudo resize2fs /dev/sda1
-</code></pre>
-<p>系统格式为xfs则</p>
-<pre><code>sudo xfs_growfs /
-#这里的  /  是上面
-sda      8:0    0   50G  0 disk 
-└─sda1   8:1    0   20G  0 part /
-中的  /
-请自行替换
-meta-data=/dev/sda1              isize=512    agcount=8, agsize=655296 blks
-                 =                       sectsz=4096  attr=2, projid32bit=1
-                 =                       crc=1        finobt=1, sparse=1, rmapbt=0
-                 =                       reflink=1
-data          =                       bsize=4096   blocks=5242368, imaxpct=25
-                 =                       sunit=0      swidth=0 blks
-naming     =version 2              bsize=4096   ascii-ci=0, ftype=1
-log            =internal log           bsize=4096   blocks=2560, version=2
-                  =                       sectsz=4096  sunit=1 blks, lazy-count=1
-realtime     =none                   extsz=4096   blocks=0, rtextents=0
-data blocks changed from 5242368 to 13106939
-</code></pre>
-<pre><code>sudo df -h /dev/sda1
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda1        50G   10G   40G  20% /
-</code></pre>
-<h1 id="完">完</h1>
+<p>右键copy&gt;&gt;&gt;Just url<br>
+用N_m3u8DL-CLI下载</p>
 
             </div>
             
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://tsubakiyui.github.io/post/bu-yao-sui-bian-ba-ubuntu-zi-dai-python-gei-xie-zai-liao/">
-                  <h3 class="post-title">
-                    不要随便把ubuntu自带python给卸载了
-                  </h3>
-                </a>
-              </div>
             
 
             
